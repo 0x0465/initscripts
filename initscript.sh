@@ -1,5 +1,5 @@
 #!/bin/bash
-if "$(whoami)" -eq "root"; then
+if [ "$EUID" -eq 0 ]; then
     dir=/"$(whoami)"
 else
     dir=/home/"$(whoami)"
