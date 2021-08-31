@@ -1,4 +1,5 @@
 #!/bin/bash
+# checking if root
 if [ "$EUID" -eq 0 ]; then
     dir=/"$(whoami)"
 else
