@@ -1,5 +1,10 @@
 #!/bin/bash
-dir=/home/"$(whoami)"
+if "$(whoami)" -eq "root"; then
+    dir=/"$(whoami)"
+else
+    dir=/home/"$(whoami)"
+fi
+
 read -p  "Are you sure? [y/N]" -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]
