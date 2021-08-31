@@ -12,10 +12,10 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]
     then
         exit 1
         fi
-        
+# old function        
 # Ignore case-sensitive in autocompletion       
-if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
-echo 'set completion-ignore-case On' >> ~/.inputrc     
+#if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
+#echo 'set completion-ignore-case On' >> ~/.inputrc     
 
 cd "$dir" || exit
 if [ -d "$dir"/dotfiles ];then
