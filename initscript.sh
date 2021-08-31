@@ -12,6 +12,7 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]
     then
         exit 1
         fi
+        
 # old function        
 # Ignore case-sensitive in autocompletion       
 #if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
@@ -28,6 +29,7 @@ if [ -d "$dir"/dotfiles ];then
     else
         echo "Deleting ~/dotflies"
         rm -rf "$dir"/dotfiles
+        rm "$dir"/.inputrc        
         rm "$dir"/.vimrc
         rm "$dir"/.tmux.conf
         echo "Downloading files from github"
@@ -35,6 +37,7 @@ if [ -d "$dir"/dotfiles ];then
         find "$dir"/dotfiles -maxdepth 1 -type f \( -name ".*" ! -name ".git" \) | while read file;do ln -s "$file" "$dir"/;done
     fi
 else
+     rm "$dir"/.inputrc
      rm "$dir"/.vimrc
      rm "$dir"/.tmux.conf
      echo "Downloading files from github"
